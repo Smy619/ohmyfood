@@ -62,6 +62,20 @@ git clone https://github.com/Smy619/ohmyfood.git
 
 # Ouvrez index.html dans votre navigateur
 
+🎨 Animations CSS ajoutées
+Animation fade-in des cartes de restaurants à l'ouverture de la page.
+
+Effet de zoom sur les images des restaurants au passage de la souris.
+
+Bouton "Commander" qui grandit au survol pour attirer l'attention.
+
+Icône cœur (favori) qui change de couleur et grossit au survol.
+
+Effet léger sur les éléments du menu au survol pour améliorer la lisibilité.
+
+Ces animations améliorent l'interaction et rendent l'interface plus dynamique et agréable à utiliser.
+
+
 👩‍💻 A propos de moi
 Développeur Web Junior passionné par l'intégrateur web, toujours prêt à relever de nouveaux défis !
 
