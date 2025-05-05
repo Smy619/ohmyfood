@@ -26,7 +26,7 @@ Effet d’apparition progressive des plats
 
 Icônes interactifs (ex: favoris ❤️)
 
-Site 100% responsive (mobile, tablette, desktop
+Site 100% responsive (mobile, tablette, desktop)
 
 🛠️ Technologies utilisées
 HTML5
