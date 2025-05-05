@@ -207,13 +207,6 @@ gap:0.25px;
   animation: fadeInUp 0.6s ease-out forwards;
 }
 
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .card-image-wrapper {
   position: relative;
   overflow: hidden;
@@ -281,20 +274,39 @@ gap:0.25px;
 }
 
 .heart {
-  font-size: 20.8px;
-  color: #999;
+  display: inline-block;
+  width: 22px;
+  height: 21px;
+  margin-top:20px;
+  margin-right: 20px;
+  background-image: url('./images/heart-white.png');
+  background-size: cover;
+  background-repeat: no-repeat;
   cursor: pointer;
-  padding-right: 19.2px;
-  transition: color 0.3s ease;
-  font-family: "Arial", sans-serif; 
-  
-}
-.heart:hover {
-  color: #a933e9;
-  transform: scale(1.2);
-  transition: transform 0.3s, color 0.3s;
+  transition: background-image 0.3s ease;
 }
 
+.heart:hover {
+  opacity: 0.8;
+}
+
+#heart-toggle-1:checked + .heart {
+  background-image: url('./images/heart-purple.png');
+
+}
+#heart-toggle-2:checked + .heart {
+  background-image: url('./images/heart-purple.png');
+
+}
+
+#heart-toggle-3:checked + .heart {
+  background-image: url('./images/heart-purple.png');
+
+}
+#heart-toggle-4:checked + .heart {
+  background-image: url('./images/heart-purple.png');
+
+}
 
 
 
