@@ -69,7 +69,7 @@ body {
 .menu-title {
   width: 100%;
   background: rgba(246, 246, 246, 1);
-  margin: -30px 0px 24px;
+  margin: -30px 0px 0px;
   padding: 24px 16px;
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;
@@ -88,8 +88,6 @@ body {
   font-weight: 400;
   font-size: 28px;
   margin:0;
-  
-  
 }
 
 .heart {
@@ -98,7 +96,6 @@ body {
   cursor: pointer;
   transition: color 0.3s;
   margin-right: 20px;
-
 }
 
 
@@ -107,7 +104,7 @@ body {
   display:flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 10px;
+  //gap: 10px;
   padding: 0;
 }
 
@@ -141,7 +138,7 @@ body {
   align-items: center;
   background-color: white;
   border-radius: 15px;
-  padding: 12px 16px;
+  padding: 12px 80px 12px 16px;
   margin-bottom: 12px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
   cursor:pointer;
@@ -156,18 +153,41 @@ body {
 
 .container-text {
   flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+
+.container-text::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 100%;
+  background: linear-gradient(to left, white 60%, transparent);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 2;
 }
 
 .container-text h3 {
   margin: 0;
   font-size: 16px;
   font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .container-text p {
   margin: 4px 0 0;
   font-size: 14px;
   color: $text-muted;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 
@@ -175,11 +195,12 @@ body {
 .prix {
   font-weight: bold;
   font-size: 14px;
-  position:relative;
-  z-index:1;
+  position:absolute;
+  z-index:2;
   transition:margin-right 0.4s ease-in-out,transform 0.3s ease, opacity 0.3s ease;
-  margin-right: 0;
- }
+  bottom: 12px;
+  right: 16px;
+}
 
  
   .check-wrapper {
@@ -197,7 +218,7 @@ body {
     overflow: hidden;
     opacity: 0;
     transition: width 0.4s ease-in-out, opacity 0.4s ease-in-out;
-    z-index:0;
+    z-index: 1;
   }
 
   .check-circle {
@@ -216,11 +237,11 @@ body {
     font-size: 16px;
     font-weight: bold;
     color:$check-color;
-}
+  }
   
   input[type="checkbox"]:checked + .menu-container .check-wrapper {
     opacity: 1;
-    width: 80px;
+    width: 60px;
   }
 
   input[type="checkbox"]:checked + .menu-container .check-circle {
@@ -228,12 +249,14 @@ body {
   }
 
   input[type="checkbox"]:checked + .menu-container .prix {
-    margin-right: 20px;
-    transform: translateX(-2px);
+    //margin-right: 20px;
+    transform: translateX(-60px);
     opacity:0.95;
   }
 
-  
+  input[type="checkbox"]:checked + .menu-container .container-text::after {
+  opacity: 1;
+  }
 
 
 
@@ -260,9 +283,16 @@ body {
 
 /* Footer */
 footer {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
   background-color: #353535;
   color: white;
-  padding: 32px 16px;
+  padding-top:32px;
+  padding-bottom: 32px;
   font-family: 'Roboto', sans-serif;  
 }
 
@@ -279,7 +309,6 @@ footer {
   text-align: left;
   align-items: flex-start;
   max-width: 1440px;
-  
 }
 
 .footer-item{
@@ -350,18 +379,20 @@ footer {
 
 .footer-content {
   flex-direction: row-reverse;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
+  margin-left: 0;
+  padding-top: 30px;
 }
   
 
 .footer-logo {
   align-self: flex-end;
+  margin-left: 50px;
 }
 .footer-item {
   flex-direction: row;
   align-items: flex-end;
   gap:32px;
 }
-
 }

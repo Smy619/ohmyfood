@@ -15,23 +15,29 @@ body {
 /* Header  */
 header {
   background-color: white;
-  padding: 16px;
   text-align: center;
   border-bottom: 1px solid #ddd;
 }
 
 .logo img {
-  height: 35px;
+  width: 197px;
+  height: 36px;
+  margin-top: 20px;
 }
 
 .adress {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 17px;
   margin-top: 8px;
-  font-size: 14px;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 500;
   color: #555;
+  background-color: #f3f3f3;
+  height: 50px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .adress img {
   width: 18px;
@@ -40,28 +46,41 @@ header {
 
 /* reservation*/
 .reservation {
-  background-color: #f3f3f3;
-  padding: 32px 16px;
+  padding: 40px 16px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
 }
 .reservation h2 {
-  font-size: 20.8px;
-  margin-bottom: 8px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  padding-bottom: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 .reservation p {
-  font-size: 15.2px;
-  color: #666;
-  margin-bottom: 8px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #353535;
+  padding-bottom: 20px;
 }
 .reservation button {
   width: 218px;
   height: 50px;
   border-radius: 25px;
-  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
   border: none;
   color: white;
   font-family: "Roboto", sans-serif;
@@ -71,9 +90,10 @@ header {
   justify-content: center;
   align-items: center;
   text-align: center;
-  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
   cursor: pointer;
   transition: transform 0.2s ease;
+  margin-top: 20px;
 }
 .reservation button:hover {
   transform: scale(1.05);
@@ -82,7 +102,7 @@ header {
 
 /* fonctionnement */
 .fonctionnement {
-  padding: 24px 16px;
+  padding: 60px 16px 40px;
   background-color: white;
   margin: auto;
   width: 100%;
@@ -98,22 +118,19 @@ header {
 .fonctionnement .step-container {
   display: flex;
   flex-direction: column;
+  padding-left: 20px;
+  margin-bottom: 30px;
 }
 .fonctionnement .step {
   background-color: rgb(246, 246, 246);
-  width: 322px;
-  height: 72px;
-  top: 505px;
-  left: 30px;
-  border-radius: 20px;
+  max-width: 100%;
+  border-radius: 18px;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
-  padding: 1px 1px 1px 3.5px;
-  margin-top: 25px;
-  margin-bottom: 15px;
-  margin-left: 20px;
+  padding: 25px 1px;
   display: flex;
   align-items: center;
-  gap: 0.25px;
+  gap: 5px;
+  margin-top: 25px;
 }
 .fonctionnement .step img {
   width: 20px;
@@ -175,13 +192,23 @@ header {
     margin: 0 20px;
   }
 }
+@media (min-width: 768px) and (max-width: 1023px) {
+  .fonctionnement .step-container {
+    align-items: center;
+    padding-left: 0;
+  }
+  .fonctionnement .step {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 500px;
+  }
+}
 
 /* restaurant */
 .restaurants {
   padding: 24px 16px;
-  background-color: white;
-  margin: auto;
   width: 100%;
+  margin-top: 20px;
 }
 .restaurants h2 {
   font-size: 24px;
@@ -195,7 +222,6 @@ header {
 .restaurants .restaurants-grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 20px 200px;
   margin: auto;
   max-width: 1440px;
 }
@@ -204,7 +230,6 @@ header {
   background-color: white;
   border-radius: 15px;
   overflow: hidden;
-  margin-bottom: 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
   margin-top: 20px;
 }
@@ -225,19 +250,18 @@ header {
 }
 .restaurants .card-image-wrapper .badge {
   position: absolute;
-  width: 61px;
-  height: 16px;
-  top: 7px;
-  right: 20px;
+  width: 80px;
+  height: 29px;
+  top: 13px;
+  right: 13px;
   font-family: Roboto;
   font-weight: 500;
   font-size: 14px;
   line-height: 100%;
-  letter-spacing: 0%;
   text-align: center;
+  align-content: center;
   background: rgb(153, 226, 208);
   color: rgb(0, 135, 102);
-  font-size: 14px;
 }
 .restaurants .card-content {
   padding: 0;
@@ -245,22 +269,22 @@ header {
 .restaurants .card-content .card-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 .restaurants .card-content .card-header h3 {
-  margin: 0;
+  margin-top: 10px;
   font-size: 18px;
   font-weight: 700;
   color: #000;
-  line-height: 1;
-  margin-left: 24px;
+  line-height: 1.2;
+  margin-left: 16px;
 }
 .restaurants .card-content .card-header .heart {
   display: inline-block;
   width: 22px;
   height: 21px;
-  margin-top: 20px;
-  margin-right: 20px;
+  margin-top: 12px;
+  margin-right: 16px;
   background-image: url("./images/heart-white.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -277,12 +301,11 @@ header {
   background-image: url("./images/heart-purple.png");
 }
 .restaurants .card-content p {
-  margin-top: 3.2px;
-  font-size: 17px;
+  font-size: 15px;
   color: #666;
-  line-height: 1.4;
-  margin-left: 24px;
-  padding-bottom: 8px;
+  line-height: 1.2;
+  margin-left: 16px;
+  padding-bottom: 10px;
 }
 @media (min-width: 1024px) {
   .restaurants {
@@ -296,6 +319,7 @@ header {
   }
   .restaurants .restaurants-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px 40px;
   }
 }
 
@@ -305,11 +329,12 @@ footer {
   color: white;
   padding: 32px 16px;
   font-family: "Roboto", sans-serif;
+  margin-top: 30px;
 }
 footer .footer {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 12px;
 }
 footer .footer .footer-content {
   display: flex;
@@ -344,11 +369,13 @@ footer .footer .footer-content .footer-logo {
 @media (min-width: 1024px) {
   footer .footer .footer-content {
     flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
+    margin-left: auto;
   }
   footer .footer .footer-content .footer-logo {
     align-self: flex-end;
+    margin-left: 50px;
   }
   footer .footer .footer-content .footer-item {
     flex-direction: row;
