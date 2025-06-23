@@ -25,17 +25,19 @@
 
   
   <!--menu-->
-  <div class="menu-wrapper">
+<div class="menu-wrapper">
     
   <section class="menu-title">
     <h1>À la française</h1>
-    <span class="heart">♡</span>
+    <input type="checkbox" id="heart-toggle" hidden>
+    <label for="heart-toggle" class="heart"></label>
   </section>
   
   <div class="menu-category">
     <h2>Entrées</h2>
-    <input type="checkbox" id="item1" hidden>
-    <label for="item1" class="menu-container">
+    <div class="menu-item">
+      <input type="checkbox" id="item1" hidden>
+      <label for="item1" class="menu-container">
           <div class="container-text">
             <h3>Tartare de poulpe acidulé</h3>
             <p>Aux zestes d'orange</p>
@@ -46,10 +48,12 @@
             <span class="check">✔</span>
             </div>
             </div>
-    </label>
+      </label>
+    </div>
  
-    <input type="checkbox" id="item2" hidden>
-    <label for="item2" class="menu-container">
+    <div class="menu-item">
+      <input type="checkbox" id="item2" hidden>
+      <label for="item2" class="menu-container">
           <div class="container-text">
             <h3>Velouté de légumes d'antan</h3>
             <p>Carotte, panais, topinambour</p>
@@ -61,7 +65,9 @@
             </div>
             </div>
       </label>
+    </div>
 
+    <div class="menu-item">
       <input type="checkbox" id="item3" hidden>
       <label for="item3" class="menu-container">
           <div class="container-text">
@@ -75,12 +81,15 @@
             </div>
             </div>
       </label>
+    </div>
   </div>
 
   <div class="menu-category">
     <h2>Plats</h2>
-    <input type="checkbox" id="item4" hidden>
-    <label for="item4" class="menu-container">
+
+    <div class="menu-item">
+      <input type="checkbox" id="item4" hidden>
+      <label for="item4" class="menu-container">
           <div class="container-text">
             <h3>Coquilles Saint-Jacques</h3>
             <p>Accompagnées d'une purée de panais</p>
@@ -92,7 +101,9 @@
             </div>
             </div>
       </label>
-       
+    </div>
+    
+    <div class="menu-item">
       <input type="checkbox" id="item5" hidden>
       <label for="item5" class="menu-container">
           <div class="container-text">
@@ -106,9 +117,11 @@
             </div>
             </div>
        </label>
+    </div>
 
-       <input type="checkbox" id="item6" hidden>
-        <label for="item6" class="menu-container">
+    <div class="menu-item">
+      <input type="checkbox" id="item6" hidden>
+      <label for="item6" class="menu-container">
          <div class="container-text">
             <h3>Pigeonneau d'Ille-et-Vilaine</h3>
             <p>Sur son lit de gnocchis aux légumes</p>
@@ -120,13 +133,15 @@
             </div>
             </div>
         </label>
+    </div>
   </div>
 
   <div class="menu-category">
     <h2>Desserts</h2>
-        
-    <input type="checkbox" id="item7" hidden>
-    <label for="item7" class="menu-container">
+
+    <div class="menu-item">
+      <input type="checkbox" id="item7" hidden>
+      <label for="item7" class="menu-container">
         <div class="container-text">
             <h3>Pétales de violettes glacés</h3>
             <p>Et purée de noisettes</p>
@@ -137,11 +152,12 @@
             <span class="check">✔</span>
             </div>
             </div>
-    </label>
+      </label>
+    </div>
 
-
+    <div class="menu-item">
      <input type="checkbox" id="item8" hidden>
-    <label for="item8" class="menu-container">
+     <label for="item8" class="menu-container">
        <div class="container-text">
             <h3>Fondant au chocolat</h3>
             <p>Revisitée</p>
@@ -152,11 +168,12 @@
             <span class="check">✔</span>
             </div>
         </div>
-    </label>
-  
+      </label>
+    </div>
 
-    <input type="checkbox" id="item9" hidden>
-    <label for="item9" class="menu-container">
+    <div class="menu-item">
+      <input type="checkbox" id="item9" hidden>
+      <label for="item9" class="menu-container">
           <div class="container-text">
             <h3>Millefeuille croustillant</h3>
             <p>Myrtilles et pâte d’amande</p>
@@ -167,9 +184,10 @@
             <span class="check">✔</span>
             </div>
             </div>
-    </label>
+      </label>
+    </div>
   </div>
-    
+</div>    
     <div class="menu-button">
       <button class="button">Commander</button>
     </div>
@@ -179,19 +197,24 @@
 <footer>
   <div class="footer">
     <div class="footer-content">
-    <img src="logo/ohmyfood1.png" alt="logo" class="footer-logo"/>
-    <ul class="footer-item">
-      <li><i class="fas fa-utensils"></i>
-      <span>Proposer un restaurant</span>
-      </li>
-      <li>
-      <i class="fas fa-handshake-angle"></i>
-      <span>Devenir partenaire</span>
-      </li>
-       <li>Mentions légales</li>
-       <li>Contact</li>
-    </ul>
-     </div>
+      <img src="logo/ohmyfood1.png" alt="logo" class="footer-logo"/>
+      <ul class="footer-item">
+        <li>
+          <i class="fas fa-utensils"></i>
+          <a href="#">Proposer un restaurant</a>
+        </li>
+        <li>
+          <i class="fas fa-handshake-angle"></i>
+          <a href="#">Devenir partenaire</a>
+        </li>
+        <li>
+          <a href="#">Mentions légales</a>
+        </li>
+        <li>
+          <a href="mailto:solene.s2025@gmail.com">Contact</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </footer>
 </body>

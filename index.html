@@ -4,11 +4,13 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap" rel="stylesheet">
     <title>Ohmyfood</title>
     <link rel="stylesheet" href="ohmyfood.css"/>
   </head>
 
   <body>
+    <div class="loader-wrapper"></div>
     <!--header -->
     <header>
       <div class="logo">
@@ -21,11 +23,11 @@
     </header>
 
       <!--réserver-->
-      <section class="reservation">
+    <section class="reservation">
         <h2>Réservez le menu qui vous convient</h2>
         <p>Découvrez des restaurants d'exception,sélectionnés par nos soins.</p>
-        <button>Explorer nos restaurants</button>
-      </section>
+        <a href="#restaurants" class="button">Explorer nos restaurants</a>
+     </section>
 
     <!--Fonctionnement-->
     <section class="fonctionnement">
@@ -51,7 +53,7 @@
     </section>
     
     <!--Restaurant list-->
-    <section class="restaurants">
+    <section class="restaurants"  id="restaurants">
       <h2>Restaurants</h2>
     <div class="restaurants-grid">
 
@@ -132,18 +134,23 @@
   <div class="footer">
     <div class="footer-content">
       <img src="logo/ohmyfood1.png" alt="logo" class="footer-logo"/>
-    <ul class="footer-item">
-      <li><i class="fas fa-utensils"></i>
-      <span>Proposer un restaurant</span>
-      </li>
-    <li>
-     <i class="fas fa-handshake-angle"></i>
-      <span>Devenir partenaire</span>
-    </li>
-    <li>Mentions légales</li>
-    <li>Contact</li>
-     </ul>
-     </div>
+      <ul class="footer-item">
+        <li>
+          <i class="fas fa-utensils"></i>
+          <a href="#">Proposer un restaurant</a>
+        </li>
+        <li>
+          <i class="fas fa-handshake-angle"></i>
+          <a href="#">Devenir partenaire</a>
+        </li>
+        <li>
+          <a href="#">Mentions légales</a>
+        </li>
+        <li>
+          <a href="mailto:solene.s2025@gmail.com">Contact</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </footer>
 </body>

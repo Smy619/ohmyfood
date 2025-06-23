@@ -6,12 +6,29 @@
 }
 
 body {
-  font-family: "Arial", sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: #f8f8f8;
   color: #333;
   line-height: 1.6;
 }
 
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  animation: fadeOut 0.5s ease 2s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
 /* Header  */
 header {
   background-color: white;
@@ -19,6 +36,9 @@ header {
   border-bottom: 1px solid #ddd;
 }
 
+.logo {
+  font-family: "Shrikhand", cursive;
+}
 .logo img {
   width: 197px;
   height: 36px;
@@ -32,16 +52,17 @@ header {
   gap: 17px;
   margin-top: 8px;
   font-size: 16px;
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   color: #555;
   background-color: #f3f3f3;
   height: 50px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.adress img {
+.adress i {
   width: 18px;
   height: 18px;
+  color: #333;
 }
 
 /* reservation*/
@@ -59,7 +80,7 @@ header {
   font-weight: 700;
   font-size: 24px;
   line-height: 100%;
-  letter-spacing: 0%;
+  letter-spacing: 0;
   text-align: center;
   color: rgb(0, 0, 0);
   padding-bottom: 15px;
@@ -71,12 +92,12 @@ header {
   font-weight: 300;
   font-size: 18px;
   line-height: 100%;
-  letter-spacing: 0%;
+  letter-spacing: 0;
   text-align: center;
   color: #353535;
   padding-bottom: 20px;
 }
-.reservation button {
+.reservation .button {
   width: 218px;
   height: 50px;
   border-radius: 25px;
@@ -92,12 +113,13 @@ header {
   text-align: center;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: opacity 0.3s, box-shadow 0.3s ease;
   margin-top: 20px;
+  text-decoration: none;
 }
-.reservation button:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2);
+.reservation .button:hover {
+  opacity: 0, 8;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.3);
 }
 
 /* fonctionnement */
@@ -108,11 +130,11 @@ header {
   width: 100%;
 }
 .fonctionnement h2 {
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-size: 24px;
   line-height: 100%;
-  letter-spacing: 0%;
+  letter-spacing: 0;
   color: rgb(0, 0, 0);
 }
 .fonctionnement .step-container {
@@ -138,11 +160,11 @@ header {
   flex-shrink: 0;
 }
 .fonctionnement .step p {
-  font-family: Raleway;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 100%;
-  letter-spacing: 0%;
+  letter-spacing: 0;
   color: rgb(0, 0, 0);
   padding-left: 20px;
 }
@@ -156,7 +178,7 @@ header {
   background: rgb(147, 86, 220);
   color: white;
   border-radius: 50%;
-  font-size: 12.8px;
+  font-size: 13px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -186,6 +208,7 @@ header {
     flex-wrap: wrap;
     margin-top: 10px;
     justify-content: center;
+    padding-left: 0;
   }
   .fonctionnement .step {
     flex: 1;
@@ -195,7 +218,7 @@ header {
 @media (min-width: 768px) and (max-width: 1023px) {
   .fonctionnement .step-container {
     align-items: center;
-    padding-left: 0;
+    padding-left: 20px;
   }
   .fonctionnement .step {
     margin: 0 auto;
@@ -213,11 +236,11 @@ header {
 .restaurants h2 {
   font-size: 24px;
   margin-bottom: 0;
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
   color: rgb(0, 0, 0);
   line-height: 100%;
-  letter-spacing: 0%;
+  letter-spacing: 0;
 }
 .restaurants .restaurants-grid {
   display: grid;
@@ -254,7 +277,7 @@ header {
   height: 29px;
   top: 13px;
   right: 13px;
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 14px;
   line-height: 100%;
@@ -262,6 +285,7 @@ header {
   align-content: center;
   background: rgb(153, 226, 208);
   color: rgb(0, 135, 102);
+  border-radius: 5px;
 }
 .restaurants .card-content {
   padding: 0;
@@ -278,6 +302,7 @@ header {
   color: #000;
   line-height: 1.2;
   margin-left: 16px;
+  font-family: "Roboto", sans-serif;
 }
 .restaurants .card-content .card-header .heart {
   display: inline-block;
@@ -289,16 +314,18 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   cursor: pointer;
-  transition: background-image 0.3s ease;
+  transition: background-image 0.3s ease, transform 0.3s ease;
 }
 .restaurants .card-content .card-header .heart:hover {
   opacity: 0.8;
+  transform: scale(1.1);
 }
 .restaurants .card-content .card-header #heart-toggle-1:checked + .heart,
 .restaurants .card-content .card-header #heart-toggle-2:checked + .heart,
 .restaurants .card-content .card-header #heart-toggle-3:checked + .heart,
 .restaurants .card-content .card-header #heart-toggle-4:checked + .heart {
   background-image: url("./images/heart-purple.png");
+  transform: scale(1.2);
 }
 .restaurants .card-content p {
   font-size: 15px;
@@ -306,37 +333,43 @@ header {
   line-height: 1.2;
   margin-left: 16px;
   padding-bottom: 10px;
+  font-family: "Roboto", sans-serif;
 }
 @media (min-width: 1024px) {
   .restaurants {
-    padding: 0 180px;
-    gap: 28px;
+    padding-left: 180px;
+    padding-right: 180px;
+    margin-top: 5px;
   }
   .restaurants h2 {
-    padding: 10px 250px 30px 10px;
-    height: 28px;
+    padding: 0;
+    height: auto;
     font-size: 24px;
+    font-family: "Roboto", sans-serif;
   }
   .restaurants .restaurants-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px 40px;
+    gap: 40px 150px;
+    margin-left: 10px;
   }
 }
 
 /* Footer */
 footer {
+  width: 100%;
   background-color: #353535;
   color: white;
   padding: 32px 16px;
-  font-family: "Roboto", sans-serif;
   margin-top: 30px;
 }
-footer .footer {
+
+.footer {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 12px;
 }
-footer .footer .footer-content {
+
+.footer-content {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -344,7 +377,13 @@ footer .footer .footer-content {
   align-items: flex-start;
   max-width: 1440px;
 }
-footer .footer .footer-content .footer-item {
+
+.footer-logo {
+  height: 27px;
+  width: 139px;
+}
+
+.footer-item {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -352,34 +391,48 @@ footer .footer .footer-content .footer-item {
   margin: 0;
   list-style: none;
 }
-footer .footer .footer-content .footer-item li {
+
+.footer-item li {
   display: flex;
   align-items: center;
   gap: 5px;
 }
-footer .footer .footer-content .footer-item li img {
+
+.footer-item li img {
   width: 11px;
   height: 13px;
   top: 2px;
 }
-footer .footer .footer-content .footer-logo {
-  height: 27px;
-  width: 139px;
+
+.footer-item a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
 }
+
 @media (min-width: 1024px) {
-  footer .footer .footer-content {
+  .footer-content {
     flex-direction: row-reverse;
     justify-content: flex-start;
     align-items: flex-start;
-    margin-left: auto;
   }
-  footer .footer .footer-content .footer-logo {
+  .footer {
+    margin-right: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .footer-logo {
+    margin-left: 60px;
+    margin-right: 10px;
     align-self: flex-end;
-    margin-left: 50px;
   }
-  footer .footer .footer-content .footer-item {
+  .footer-item {
     flex-direction: row;
     gap: 32px;
     align-items: flex-end;
+  }
+  .footer-item a {
+    color: white;
+    text-decoration: none;
   }
 }/*# sourceMappingURL=ohmyfood.css.map */

@@ -1,7 +1,8 @@
-$font-stack: "Arial", sans-serif;
+$text-font: "Roboto", sans-serif;
 $bg-color: #f8f8f8;
 $text-color: #333;
 $line-height-base: 1.6;
+$title-font: "Shrikhand", cursive;
 
 /* Reset */
 * {
@@ -11,10 +12,28 @@ $line-height-base: 1.6;
 }
 
 body {
-  font-family: $font-stack;
+  font-family: $text-font;
   background-color: $bg-color;
   color: $text-color;
   line-height: $line-height-base;
+}
+
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  animation: fadeOut 0.5s ease 2s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 /* Header  */
@@ -29,11 +48,12 @@ header {
 
 .logo {
   //margin-top: 14px;
+  font-family: $title-font;
 
   img {
     width: 197px;
     height: 36px;
-    margin-top: 20px;;
+    margin-top: 20px;
   }
 }
 
@@ -44,16 +64,18 @@ header {
   gap: 17px;
   margin-top: 8px;
   font-size: 16px;
-  font-family: Roboto;
+  font-family:$text-font;
   font-weight: 500;
   color: $text-light;
   background-color: #f3f3f3;
   height: 50px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
-  img {
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25),
+               0px 4px 4px rgba(0, 0, 0, 0.25);
+  
+    i {
     width: 18px;
     height: 18px;
+    color:$text-color;
   }
 }
 
@@ -64,7 +86,6 @@ $gradient: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
 $button-radius: 25px;
 $button-width: 218px;
 $button-height: 50px;
-$button-font: "Roboto", sans-serif;
 
 .reservation {
   padding: 40px 16px;
@@ -76,11 +97,11 @@ $button-font: "Roboto", sans-serif;
   margin-bottom: 20px;
 
   h2 {
-    font-family: $button-font;
+    font-family: $text-font;
     font-weight: 700;
     font-size: 24px;
     line-height: 100%;
-    letter-spacing: 0%;
+    letter-spacing: 0;
     text-align: center;
     color: rgba(0, 0, 0, 1);
     padding-bottom: 15px;
@@ -89,24 +110,24 @@ $button-font: "Roboto", sans-serif;
   }
 
   p {
-    font-family: $button-font;
+    font-family: $text-font;
     font-weight: 300;
     font-size: 18px;
     line-height: 100%;
-    letter-spacing: 0%;
+    letter-spacing: 0;
     text-align: center;
     color: #353535;
     padding-bottom: 20px;
   }
 
-  button {
+  .button {
     width: $button-width;
     height: $button-height;
     border-radius: $button-radius;
     background: $gradient;
     border: none;
     color: white;
-    font-family: $button-font;
+    font-family: $text-font;
     font-weight: 500;
     font-size: 16px;
     display: flex;
@@ -115,12 +136,13 @@ $button-font: "Roboto", sans-serif;
     text-align: center;
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: opacity 0.3s, box-shadow 0.3s ease;
     margin-top: 20px;
+    text-decoration: none;
 
     &:hover {
-      transform: scale(1.05);
-      box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2);
+      opacity: 0,8;
+      box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.3);
     }
   }
 }
@@ -139,12 +161,13 @@ $numero-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.15);
   width: 100%;
 
   h2 {
-    font-family: Roboto;
+    font-family: $text-font;
     font-weight: 700;
     font-size: 24px;
     line-height: 100%;
-    letter-spacing: 0%;
+    letter-spacing: 0;
     color: $text-dark;
+   
   }
 
   .step-container {
@@ -173,11 +196,11 @@ $numero-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.15);
     }
 
     p {
-      font-family: Raleway;
+      font-family: $text-font;
       font-weight: 500;
       font-size: 16px;
       line-height: 100%;
-      letter-spacing: 0%;
+      letter-spacing: 0;
       color: rgba(0, 0, 0, 1);
       padding-left: 20px;
     }
@@ -193,7 +216,7 @@ $numero-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.15);
     background: $purple;
     color: white;
     border-radius: 50%;
-    font-size: 12.8px;
+    font-size: 13px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -226,6 +249,7 @@ $numero-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.15);
       flex-wrap: wrap;
       margin-top: 10px;
       justify-content: center;
+      padding-left: 0;
     }
 
     .step {
@@ -237,7 +261,7 @@ $numero-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.15);
   @media (min-width: 768px) and (max-width: 1023px) {
     .step-container {
       align-items: center;
-      padding-left: 0;
+      padding-left: 20px;
     }
 
     .step {
@@ -265,63 +289,64 @@ $grey-bg: #f3f3f3;
   h2 {
     font-size: 24px;
     margin-bottom: 0;
-    font-family: Roboto;
+    font-family: $text-font;
     font-weight: 700;
     color: $text-dark;
     line-height: 100%;
-    letter-spacing: 0%;
+    letter-spacing: 0;
+    
   }
 
+  .restaurants-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    //gap: 20px 200px ;
+    margin: auto;
+    max-width: 1440px;
+  }
 
-.restaurants-grid {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  //gap: 20px 200px ;
-  margin: auto;
-  max-width: 1440px;
-}
-
-.restaurants-card {
-  width: 100%;
-  background-color: white;
-  border-radius: 15px;
-  overflow: hidden;
-  //margin-bottom: 20px;
-  box-shadow: $card-shadow;
-  margin-top: 20px;
-}
-
-.card-image-wrapper {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-
-  img {
+  .restaurants-card {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    transition: transform 0.3s;
-    display: block;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    //margin-bottom: 20px;
+    box-shadow: $card-shadow;
+    margin-top: 20px;
   }
 
-  .badge {
-    position: absolute;
-    width: 80px;
-    height: 29px;
-    top: 13px;
-    right: 13px;
-    font-family: Roboto;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 100%;
-    text-align: center;
-    align-content: center;
-    background: rgba(153, 226, 208, 1);
-    color: rgba(0, 135, 102, 1);
+  .card-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      transition: transform 0.3s;
+      display: block;
+    }
+
+    .badge {
+      position: absolute;
+      width: 80px;
+      height: 29px;
+      top: 13px;
+      right: 13px;
+      font-family: $text-font;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 100%;
+      text-align: center;
+      align-content: center;
+      background: rgba(153, 226, 208, 1);
+      color: rgba(0, 135, 102, 1);
+      border-radius: 5px;
+    }
   }
- }
   .card-content {
     padding: 0;
 
@@ -337,6 +362,7 @@ $grey-bg: #f3f3f3;
         color: #000;
         line-height: 1.2;
         margin-left: 16px;
+        font-family: $text-font;
       }
 
       .heart {
@@ -349,10 +375,11 @@ $grey-bg: #f3f3f3;
         background-size: cover;
         background-repeat: no-repeat;
         cursor: pointer;
-        transition: background-image 0.3s ease;
+        transition: background-image 0.3s ease,transform 0.3s ease;
 
         &:hover {
           opacity: 0.8;
+          transform: scale(1.1);
         }
       }
 
@@ -361,6 +388,7 @@ $grey-bg: #f3f3f3;
       #heart-toggle-3:checked + .heart,
       #heart-toggle-4:checked + .heart {
         background-image: url("./images/heart-purple.png");
+        transform: scale(1.2);
       }
     }
 
@@ -371,23 +399,28 @@ $grey-bg: #f3f3f3;
       line-height: 1.2;
       margin-left: 16px;
       padding-bottom: 10px;
+      font-family: $text-font;
     }
   }
   @media (min-width: 1024px) {
     & {
-      padding: 0 180px;
-      gap: 28px;
+      padding-left: 180px;
+      padding-right: 180px;
+      margin-top: 5px;
     }
 
     h2 {
-      padding: 10px 250px 30px 10px;
-      height: 28px;
+      padding:0;
+      height: auto;
       font-size: 24px;
+      font-family: $text-font;
     }
 
     .restaurants-grid {
       grid-template-columns: repeat(2, 1fr);
-      gap: 20px 40px;
+      gap: 40px 150px;
+      margin-left:10px;
+    
     }
   }
 }
@@ -395,69 +428,98 @@ $grey-bg: #f3f3f3;
 /* Footer */
 $footer-bg: #353535;
 $text-light: white;
-$font-main: "Roboto", sans-serif;
+
 
 footer {
+  width: 100%;
   background-color: $footer-bg;
   color: $text-light;
   padding: 32px 16px;
-  font-family: $font-main;
   margin-top: 30px;
+}
+
+
+.footer {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+  align-items: flex-start;
+  max-width: 1440px;
+}
+
+
+.footer-logo {
+  height: 27px;
+  width: 139px;
+}
+
+
+.footer-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+
+.footer-item li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+
+.footer-item li img {
+  width: 11px;
+  height: 13px;
+  top: 2px;
+}
+
+
+.footer-item a {
+  text-decoration: none;
+  color: $text-light;
+  font-size: 14px;
+}
+
+
+@media (min-width: 1024px) {
+  .footer-content {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 
   .footer {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 12px;
+    margin-right: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 
-    .footer-content {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      text-align: left;
-      align-items: flex-start;
-      max-width: 1440px;
+  .footer-logo {
+    margin-left: 60px;
+    margin-right: 10px;
+    align-self: flex-end;
+  }
 
-      .footer-item {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding: 0;
-        margin: 0;
-        list-style: none;
+  .footer-item {
+    flex-direction: row;
+    gap: 32px;
+    align-items: flex-end;
+  }
 
-        li {
-          display: flex;
-          align-items: center;
-          gap: 5px;
-
-          img {
-            width: 11px;
-            height: 13px;
-            top: 2px;
-          }
-        }
-      }
-      .footer-logo {
-        height: 27px;
-        width: 139px;
-      }
-      @media (min-width: 1024px) {
-        & {
-          flex-direction: row-reverse;
-          justify-content: flex-start;
-          align-items: flex-start;
-          margin-left:auto;
-        }
-        .footer-logo {
-          align-self: flex-end;
-          margin-left: 50px;
-        }
-        .footer-item {
-          flex-direction: row;
-          gap: 32px;
-          align-items: flex-end;
-        }
-      }
-    }
+  .footer-item a {
+    color: $text-light;
+    text-decoration: none;
   }
 }

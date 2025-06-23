@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="menu.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
 </head>
-  </head>
+
 
   
   <!--header-->
@@ -30,11 +30,13 @@
     
   <section class="menu-title">
     <h1>La palette du goût</h1>
-    <span class="heart">♡</span>
+    <input type="checkbox" id="heart-toggle" hidden>
+    <label for="heart-toggle" class="heart"></label>
   </section>
   
   <div class="menu-category">
-    <h2>Entrées</h2>
+    <h2>ENTRÉE</h2>
+      <div class="menu-item">
         <input type="checkbox" id="item1" hidden>
         <label for="item1" class="menu-container">
           <div class="container-text">
@@ -42,14 +44,15 @@
             <p>Au piment d'Espelette </p>
           </div>
           <div class="prix">20€</div>
-          <div class="check-wrapper">
-          <div class="check-circle">
-            <span class="check">✔</span>
-          </div>
+            <div class="check-wrapper">
+              <div class="check-circle">
+                <span class="check">✔</span>
+              </div>
           </div>
         </label>
-      
- 
+      </div>
+
+        <div class="menu-item">
         <input type="checkbox" id="item2" hidden>
         <label for="item2" class="menu-container">
           <div class="container-text">
@@ -63,8 +66,9 @@
           </div>
           </div>
         </label>
- 
-
+        </div>
+        
+        <div class="menu-item">
         <input type="checkbox" id="item3" hidden>
         <label for="item3" class="menu-container">
           <div class="container-text">
@@ -78,11 +82,12 @@
           </div>
           </div>
         </label>
+        </div>
   </div>
 
   <div class="menu-category">
     <h2>Plats</h2>
-
+      <div class="menu-item">
       <input type="checkbox" id="item4" hidden>
         <label for="item4" class="menu-container">
           <div class="container-text">
@@ -96,7 +101,9 @@
           </div>
           </div>
         </label>
-  
+      </div>
+        
+        <div class="menu-item">
         <input type="checkbox" id="item5" hidden>
         <label for="item5" class="menu-container">
           <div class="container-text">
@@ -110,7 +117,9 @@
           </div>
           </div>
         </label>
+        </div>
 
+       <div class="menu-item">
        <input type="checkbox" id="item6" hidden>
        <label for="item6" class="menu-container">
          <div class="container-text">
@@ -124,17 +133,20 @@
           </div>
           </div>
         </label>
+       </div>
   </div>
 
   <div class="menu-category">
     <h2>Desserts</h2>
-        
-    <input type="checkbox" id="item7" hidden>
+
+
+     <div class="menu-item">   
+       <input type="checkbox" id="item7" hidden>
        <label for="item7" class="menu-container">
          <div class="container-text">
             <h3>Paris-Brest</h3>
             <p>Revisité</p>
-            </div>
+         </div>
             <div class="prix">18€</div>
             <div class="check-wrapper">
             <div class="check-circle">
@@ -142,7 +154,9 @@
             </div>
             </div>
           </label>
+      </div> 
 
+      <div class="menu-item">
         <input type="checkbox" id="item8" hidden>
         <label for="item8" class="menu-container">
         <div class="container-text">
@@ -156,7 +170,10 @@
           </div>
           </div>
         </label>
+      </div>
 
+
+      <div class="menu-item">
         <input type="checkbox" id="item9" hidden>
         <label for="item9" class="menu-container">
           <div class="container-text">
@@ -170,32 +187,39 @@
           </div>
           </div>
         </label>
+      </div>
   </div>
-    
+
     <div class="menu-button">
       <button class="button">Commander</button>
     </div>
-
+</div>
 
   <!--footer-->
 <footer>
   <div class="footer">
     <div class="footer-content">
       <img src="logo/ohmyfood1.png" alt="logo" class="footer-logo"/>
-    <ul class="footer-item">
-       <li><i class="fas fa-utensils"></i>
-      <span>Proposer un restaurant</span>
-      </li>
-    <li>
-      <i class="fas fa-handshake-angle"></i>
-      <span>Devenir partenaire</span>
-    </li>
-    <li>Mentions légales</li>
-    <li>Contact</li>
-     </ul>
-     </div>
+      <ul class="footer-item">
+        <li>
+          <i class="fas fa-utensils"></i>
+          <a href="#">Proposer un restaurant</a>
+        </li>
+        <li>
+          <i class="fas fa-handshake-angle"></i>
+          <a href="#">Devenir partenaire</a>
+        </li>
+        <li>
+          <a href="#">Mentions légales</a>
+        </li>
+        <li>
+          <a href="mailto:solene.s2025@gmail.com">Contact</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </footer>
+
 </body>
 </html>
 <!-- </html> -->
