@@ -21,6 +21,28 @@ body {
   height: 100%;
   background-color: white;
   animation: fadeOut 0.5s ease 2s forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-content {
+  text-align: center;
+  animation: fadeIn 1s ease-in;
+}
+
+.logo-mobile {
+  width: 100px;
+  animation: pop 2s ease-in-out;
+  margin-top: 20px;
+}
+
+.loader-text {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  color: #333;
+  margin-top: 20px;
+  animation: fadeInText 1s ease-in;
 }
 
 @keyframes fadeOut {
@@ -29,11 +51,43 @@ body {
     visibility: hidden;
   }
 }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes pop {
+  0% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /* Header  */
 header {
   background-color: white;
   text-align: center;
   border-bottom: 1px solid #ddd;
+  /*box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);*/
 }
 
 .logo {
@@ -57,7 +111,9 @@ header {
   color: #555;
   background-color: #f3f3f3;
   height: 50px;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0px -3px 2px 0px rgba(0, 0, 0, 0.08);
 }
 .adress i {
   width: 18px;
@@ -76,7 +132,7 @@ header {
   margin-bottom: 20px;
 }
 .reservation h2 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Shrikhand", cursive;
   font-weight: 700;
   font-size: 24px;
   line-height: 100%;
@@ -130,7 +186,7 @@ header {
   width: 100%;
 }
 .fonctionnement h2 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Shrikhand", cursive;
   font-weight: 700;
   font-size: 24px;
   line-height: 100%;
@@ -217,11 +273,14 @@ header {
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .fonctionnement .step-container {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    padding-left: 20px;
+    gap: 25px;
+    padding: 25px 20px 0 20px;
   }
   .fonctionnement .step {
-    margin: 0 auto;
+    margin-top: 0;
     width: 100%;
     max-width: 500px;
   }
@@ -236,7 +295,7 @@ header {
 .restaurants h2 {
   font-size: 24px;
   margin-bottom: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Shrikhand", cursive;
   font-weight: 700;
   color: rgb(0, 0, 0);
   line-height: 100%;
@@ -286,6 +345,7 @@ header {
   background: rgb(153, 226, 208);
   color: rgb(0, 135, 102);
   border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
 }
 .restaurants .card-content {
   padding: 0;
@@ -302,30 +362,44 @@ header {
   color: #000;
   line-height: 1.2;
   margin-left: 16px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Shrikhand", cursive;
 }
 .restaurants .card-content .card-header .heart {
   display: inline-block;
+  position: relative;
   width: 22px;
   height: 21px;
   margin-top: 12px;
   margin-right: 16px;
-  background-image: url("./images/heart-white.png");
+  cursor: pointer;
+}
+.restaurants .card-content .card-header .heart .heart-empty,
+.restaurants .card-content .card-header .heart .heart-filled {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  cursor: pointer;
-  transition: background-image 0.3s ease, transform 0.3s ease;
+}
+.restaurants .card-content .card-header .heart .heart-empty {
+  background-image: url("./images/heart-white.png");
+}
+.restaurants .card-content .card-header .heart .heart-filled {
+  background-image: url("./images/heart-purple.png");
+  -webkit-clip-path: inset(100% 0 0 0);
+          clip-path: inset(100% 0 0 0);
+  transition: -webkit-clip-path 0.4s ease;
+  transition: clip-path 0.4s ease;
+  transition: clip-path 0.4s ease, -webkit-clip-path 0.4s ease;
 }
 .restaurants .card-content .card-header .heart:hover {
   opacity: 0.8;
-  transform: scale(1.1);
 }
-.restaurants .card-content .card-header #heart-toggle-1:checked + .heart,
-.restaurants .card-content .card-header #heart-toggle-2:checked + .heart,
-.restaurants .card-content .card-header #heart-toggle-3:checked + .heart,
-.restaurants .card-content .card-header #heart-toggle-4:checked + .heart {
-  background-image: url("./images/heart-purple.png");
-  transform: scale(1.2);
+.restaurants .card-content .card-header input[id^=heart-toggle]:checked + .heart .heart-filled {
+  -webkit-clip-path: inset(0 0 0 0);
+          clip-path: inset(0 0 0 0);
 }
 .restaurants .card-content p {
   font-size: 15px;
@@ -345,7 +419,7 @@ header {
     padding: 0;
     height: auto;
     font-size: 24px;
-    font-family: "Roboto", sans-serif;
+    font-family: "Shrikhand", cursive;
   }
   .restaurants .restaurants-grid {
     grid-template-columns: repeat(2, 1fr);

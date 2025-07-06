@@ -27,12 +27,67 @@ body {
   height: 100%;
   background-color: white;
   animation: fadeOut 0.5s ease 2s forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader-content {
+  text-align: center;
+  animation: fadeIn 1s ease-in;
+}
+
+.logo-mobile {
+  width: 100px;
+  animation: pop 2s ease-in-out;
+  margin-top: 20px;
+}
+
+.loader-text {
+  font-family: $text-font;
+  font-size: 20px;
+  color: $text-color;
+  margin-top: 20px;
+  animation: fadeInText 1s ease-in;
 }
 
 @keyframes fadeOut {
   to {
     opacity: 0;
     visibility: hidden;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -44,6 +99,7 @@ header {
   background-color: white;
   text-align: center;
   border-bottom: 1px solid $border-color;
+  /*box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);*/
 }
 
 .logo {
@@ -64,18 +120,18 @@ header {
   gap: 17px;
   margin-top: 8px;
   font-size: 16px;
-  font-family:$text-font;
+  font-family: $text-font;
   font-weight: 500;
   color: $text-light;
   background-color: #f3f3f3;
   height: 50px;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25),
-               0px 4px 4px rgba(0, 0, 0, 0.25);
-  
-    i {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0px -3px 2px 0px rgba(0, 0, 0, 0.08);
+  i {
     width: 18px;
     height: 18px;
-    color:$text-color;
+    color: $text-color;
   }
 }
 
@@ -97,7 +153,7 @@ $button-height: 50px;
   margin-bottom: 20px;
 
   h2 {
-    font-family: $text-font;
+    font-family: $title-font;
     font-weight: 700;
     font-size: 24px;
     line-height: 100%;
@@ -141,7 +197,7 @@ $button-height: 50px;
     text-decoration: none;
 
     &:hover {
-      opacity: 0,8;
+      opacity: 0, 8;
       box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.3);
     }
   }
@@ -161,13 +217,12 @@ $numero-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.15);
   width: 100%;
 
   h2 {
-    font-family: $text-font;
+    font-family: $title-font;
     font-weight: 700;
     font-size: 24px;
     line-height: 100%;
     letter-spacing: 0;
     color: $text-dark;
-   
   }
 
   .step-container {
@@ -259,13 +314,17 @@ $numero-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.15);
   }
 
   @media (min-width: 768px) and (max-width: 1023px) {
+
     .step-container {
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      padding-left: 20px;
+      gap: 25px;
+      padding: 25px 20px 0 20px;
     }
 
     .step {
-      margin: 0 auto;
+      margin-top: 0;
       width: 100%;
       max-width: 500px;
     }
@@ -282,19 +341,17 @@ $grey-bg: #f3f3f3;
 
 .restaurants {
   padding: 24px 16px;
-  // margin: auto;
   width: 100%;
   margin-top: 20px;
 
   h2 {
     font-size: 24px;
     margin-bottom: 0;
-    font-family: $text-font;
+    font-family: $title-font;
     font-weight: 700;
     color: $text-dark;
     line-height: 100%;
     letter-spacing: 0;
-    
   }
 
   .restaurants-grid {
@@ -310,7 +367,6 @@ $grey-bg: #f3f3f3;
     background-color: white;
     border-radius: 15px;
     overflow: hidden;
-    //margin-bottom: 20px;
     box-shadow: $card-shadow;
     margin-top: 20px;
   }
@@ -345,6 +401,7 @@ $grey-bg: #f3f3f3;
       background: rgba(153, 226, 208, 1);
       color: rgba(0, 135, 102, 1);
       border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
     }
   }
   .card-content {
@@ -362,38 +419,50 @@ $grey-bg: #f3f3f3;
         color: #000;
         line-height: 1.2;
         margin-left: 16px;
-        font-family: $text-font;
+        font-family: $title-font;
       }
 
       .heart {
         display: inline-block;
+        position: relative;
         width: 22px;
         height: 21px;
         margin-top: 12px;
         margin-right: 16px;
-        background-image: url("./images/heart-white.png");
-        background-size: cover;
-        background-repeat: no-repeat;
         cursor: pointer;
-        transition: background-image 0.3s ease,transform 0.3s ease;
+
+        .heart-empty,
+        .heart-filled {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+
+        .heart-empty {
+          background-image: url("./images/heart-white.png");
+        }
+
+        .heart-filled {
+          background-image: url("./images/heart-purple.png");
+          clip-path: inset(100% 0 0 0);
+          transition: clip-path 0.4s ease;
+        }
 
         &:hover {
           opacity: 0.8;
-          transform: scale(1.1);
         }
       }
-
-      #heart-toggle-1:checked + .heart,
-      #heart-toggle-2:checked + .heart,
-      #heart-toggle-3:checked + .heart,
-      #heart-toggle-4:checked + .heart {
-        background-image: url("./images/heart-purple.png");
-        transform: scale(1.2);
-      }
+      
+       input[id^="heart-toggle"]:checked + .heart .heart-filled {
+        clip-path: inset(0 0 0 0);
+       }
     }
 
     p {
-      //margin-top: 0 0 0 16px;
       font-size: 15px;
       color: $text-muted;
       line-height: 1.2;
@@ -410,17 +479,16 @@ $grey-bg: #f3f3f3;
     }
 
     h2 {
-      padding:0;
+      padding: 0;
       height: auto;
       font-size: 24px;
-      font-family: $text-font;
+      font-family: $title-font;
     }
 
     .restaurants-grid {
       grid-template-columns: repeat(2, 1fr);
       gap: 40px 150px;
-      margin-left:10px;
-    
+      margin-left: 10px;
     }
   }
 }
@@ -428,7 +496,6 @@ $grey-bg: #f3f3f3;
 /* Footer */
 $footer-bg: #353535;
 $text-light: white;
-
 
 footer {
   width: 100%;
@@ -438,13 +505,11 @@ footer {
   margin-top: 30px;
 }
 
-
 .footer {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 12px;
 }
-
 
 .footer-content {
   display: flex;
@@ -455,12 +520,10 @@ footer {
   max-width: 1440px;
 }
 
-
 .footer-logo {
   height: 27px;
   width: 139px;
 }
-
 
 .footer-item {
   display: flex;
@@ -471,13 +534,11 @@ footer {
   list-style: none;
 }
 
-
 .footer-item li {
   display: flex;
   align-items: center;
   gap: 5px;
 }
-
 
 .footer-item li img {
   width: 11px;
@@ -485,13 +546,11 @@ footer {
   top: 2px;
 }
 
-
 .footer-item a {
   text-decoration: none;
   color: $text-light;
   font-size: 14px;
 }
-
 
 @media (min-width: 1024px) {
   .footer-content {

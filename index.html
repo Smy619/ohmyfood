@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap" rel="stylesheet">
     <title>Ohmyfood</title>
-    <link rel="stylesheet" href="ohmyfood.css"/>
+    <link rel="stylesheet" href="ohmyfood.css">
   </head>
 
   <body>
-    <div class="loader-wrapper"></div>
+    <div class="loader-wrapper">
+      <div class="loader-content">
+        <p class="loader-text">Bienvenu</p>
+        <img src="logo/ohmyfood.png" alt="logo" class="logo-mobile">
+      </div>
+    </div>
+
     <!--header -->
     <header>
       <div class="logo">
-        <img src="logo/ohmyfood.png" alt="ohmyfood"/>
+        <img src="logo/ohmyfood.png" alt="ohmyfood">
       </div>
       <div class="adress">
         <i class="fa-solid fa-location-dot"></i>
@@ -35,18 +41,18 @@
     <div class="step-container">
       <div class="step">
         <span class="numero">1</span>
-        <img src="Icon/1.png" alt="icon" class="icon"/>
+        <img src="Icon/1.png" alt="icon" class="icon">
         <p>Choisissez un restaurant</p>
       </div>
       
       <div class="step">
         <span class="numero">2</span>
-        <img src="Icon/2.png" alt="icon" class="icon"/>
+        <img src="Icon/2.png" alt="icon" class="icon">
         <p>Composez votre menu</p>
       </div>
       <div class="step">
         <span class="numero">3</span>
-        <img src="Icon/3.png" alt="icon" class="icon"/>
+        <img src="Icon/3.png" alt="icon" class="icon">
         <p>Dégustez au restaurant</p>
       </div>
     </div>
@@ -60,7 +66,7 @@
     <article class="restaurants-card">
     <div class="card-image-wrapper">
       <a href="menu1.html">
-      <img src="restaurants/1.jpg" alt="1"/>
+      <img src="restaurants/1.jpg" alt="1">
       </a>
       <span class="badge">Nouveau</span>
     </div>
@@ -69,7 +75,10 @@
       <div class="card-header">
       <h3>La palette du goût</h3>
       <input type="checkbox" id="heart-toggle-1" hidden>
-      <label for="heart-toggle-1" class="heart"></label>
+      <label for="heart-toggle-1" class="heart">
+        <span class="heart-empty"></span>
+        <span class="heart-filled"></span>
+      </label>
       </div>
       <p>Ménilmontant</p>
     </div>
@@ -78,7 +87,7 @@
     <article class="restaurants-card">
       <div class="card-image-wrapper">
         <a href="menu3.html">
-      <img src="restaurants/3.jpg" alt="3"/>
+      <img src="restaurants/3.jpg" alt="3">
         </a>
       <span class="badge">Nouveau</span>
       </div>
@@ -87,7 +96,10 @@
       <div class="card-header">
       <h3>La note enchantée</h3>
       <input type="checkbox" id="heart-toggle-2" hidden>
-      <label for="heart-toggle-2" class="heart"></label>
+      <label for="heart-toggle-2" class="heart">
+        <span class="heart-empty"></span>
+        <span class="heart-filled"></span>
+      </label>
       </div>
       <p>Charonne</p>
       </div>
@@ -97,14 +109,17 @@
     <article class="restaurants-card">
       <div class="card-image-wrapper">
       <a href="menu4.html">
-      <img src="restaurants/4.jpg" alt="4"/>
+      <img src="restaurants/4.jpg" alt="4">
       </a>
       </div>
       <div class="card-content">
       <div class="card-header">
       <h3>A la française</h3>
       <input type="checkbox" id="heart-toggle-3" hidden>
-      <label for="heart-toggle-3" class="heart"></label>
+      <label for="heart-toggle-3" class="heart">
+        <span class="heart-empty"></span>
+        <span class="heart-filled"></span>
+      </label>
       </div>
       <p>Cité Rouge</p>
       </div>
@@ -114,14 +129,17 @@
     <article class="restaurants-card">
       <div class="card-image-wrapper">
       <a href="menu2.html">
-      <img src="restaurants/2.jpg" alt="2"/>
+      <img src="restaurants/2.jpg" alt="2">
       </a>
       </div>
       <div class="card-content">
       <div class="card-header">
       <h3>Le délice des sens</h3>
       <input type="checkbox" id="heart-toggle-4" hidden>
-      <label for="heart-toggle-4" class="heart"></label>
+      <label for="heart-toggle-4" class="heart">
+        <span class="heart-empty"></span>
+        <span class="heart-filled"></span>
+      </label>
       </div>
       <p>Folie-Méricourt</p>
       </div>
@@ -133,7 +151,7 @@
 <footer>
   <div class="footer">
     <div class="footer-content">
-      <img src="logo/ohmyfood1.png" alt="logo" class="footer-logo"/>
+      <img src="logo/ohmyfood1.png" alt="logo" class="footer-logo">
       <ul class="footer-item">
         <li>
           <i class="fas fa-utensils"></i>
