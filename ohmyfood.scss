@@ -99,7 +99,6 @@ header {
   background-color: white;
   text-align: center;
   border-bottom: 1px solid $border-color;
-  /*box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);*/
 }
 
 .logo {
@@ -127,11 +126,38 @@ header {
   height: 50px;
   border: none;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0px -3px 2px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   i {
     width: 18px;
     height: 18px;
     color: $text-color;
+  }
+
+  @media (min-width: 768px) {
+    & {
+      border: none;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.06);
+    }
+  }
+
+  .adress-input {
+    width: 200px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    color: $text-light;
+    font-family: $text-font;
+    font-weight: 500;
+    font-size: 16px;
+    outline: none;
+    padding-left: 10px;
+
+    &::placeholder {
+      color: $text-light;
+      opacity: 0.7;
+    }
+    box-shadow: none;
+    border-radius: 0;
   }
 }
 
@@ -190,15 +216,15 @@ $button-height: 50px;
     justify-content: center;
     align-items: center;
     text-align: center;
-    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.15);
     cursor: pointer;
-    transition: opacity 0.3s, box-shadow 0.3s ease;
+    transition: filter 0.3s, box-shadow 0.3s ease;
     margin-top: 20px;
     text-decoration: none;
 
     &:hover {
-      opacity: 0, 8;
-      box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.3);
+      filter: brightness(1.1);
+      box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
     }
   }
 }
@@ -290,13 +316,19 @@ $numero-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.15);
 
   @media (min-width: 1024px) {
     & {
-      padding: 50px 180px 30px 180px;
+      padding: 50px 180px;
       gap: 25px;
     }
 
     h2 {
       padding: 10px 250px 50px 10px;
       height: 28px;
+    }
+
+    .main-wrapper {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
 
     .step-container {
@@ -314,7 +346,6 @@ $numero-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.15);
   }
 
   @media (min-width: 768px) and (max-width: 1023px) {
-
     .step-container {
       display: flex;
       flex-direction: column;
@@ -357,7 +388,6 @@ $grey-bg: #f3f3f3;
   .restaurants-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    //gap: 20px 200px ;
     margin: auto;
     max-width: 1440px;
   }
@@ -456,10 +486,10 @@ $grey-bg: #f3f3f3;
           opacity: 0.8;
         }
       }
-      
-       input[id^="heart-toggle"]:checked + .heart .heart-filled {
+
+      input[id^="heart-toggle"]:checked + .heart .heart-filled {
         clip-path: inset(0 0 0 0);
-       }
+      }
     }
 
     p {
@@ -473,22 +503,33 @@ $grey-bg: #f3f3f3;
   }
   @media (min-width: 1024px) {
     & {
+      margin-top: 5px;
       padding-left: 180px;
       padding-right: 180px;
-      margin-top: 5px;
+    }
+
+    .main-wrapper {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px; 
     }
 
     h2 {
-      padding: 0;
-      height: auto;
+      text-align: left;
+      margin-bottom: 30px;
       font-size: 24px;
       font-family: $title-font;
+      max-width: 1080px;
+      padding-top: 0px;
     }
 
     .restaurants-grid {
+      display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 40px 150px;
-      margin-left: 10px;
+      gap: 40px 100px;
+      margin: 0 auto;
+      max-width: 1080px;
+      width: 100%;
     }
   }
 }
