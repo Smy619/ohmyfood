@@ -108,11 +108,12 @@ header {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   color: #555;
-  background-color: #f3f3f3;
+  background-color: rgb(234, 234, 234);
   height: 50px;
   border: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-top: 1px solid rgba(0, 0, 0, 0.02);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), inset 0px 4px 2px 0px rgba(0, 0, 0, 0.05);
+  position: relative;
 }
 .adress i {
   width: 18px;
@@ -126,8 +127,8 @@ header {
   }
 }
 .adress .adress-input {
-  width: 200px;
-  height: 30px;
+  width: 109px;
+  height: 19px;
   background-color: transparent;
   border: none;
   color: #555;
@@ -135,7 +136,8 @@ header {
   font-weight: 500;
   font-size: 16px;
   outline: none;
-  padding-left: 10px;
+  text-align: center;
+  text-decoration: none;
   box-shadow: none;
   border-radius: 0;
 }
@@ -159,7 +161,7 @@ header {
   margin-bottom: 20px;
 }
 .reservation h2 {
-  font-family: "Shrikhand", cursive;
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-size: 24px;
   line-height: 100%;
@@ -213,7 +215,7 @@ header {
   width: 100%;
 }
 .fonctionnement h2 {
-  font-family: "Shrikhand", cursive;
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-size: 24px;
   line-height: 100%;
@@ -327,7 +329,7 @@ header {
 .restaurants h2 {
   font-size: 24px;
   margin-bottom: 0;
-  font-family: "Shrikhand", cursive;
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
   color: rgb(0, 0, 0);
   line-height: 100%;
@@ -394,7 +396,7 @@ header {
   color: #000;
   line-height: 1.2;
   margin-left: 16px;
-  font-family: "Shrikhand", cursive;
+  font-family: "Roboto", sans-serif;
 }
 .restaurants .card-content .card-header .heart {
   display: inline-block;

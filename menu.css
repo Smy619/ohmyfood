@@ -189,7 +189,7 @@ input[id^=heart-toggle]:checked + .heart .heart-filled {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-family: "Shrikhand", cursive;
+  font-family: "Roboto", sans-serif;
 }
 
 .container-text p {
@@ -364,7 +364,6 @@ input[id^=heart-toggle]:checked + .heart .heart-filled {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
   transition: filter 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none;
-  margin-top: 20px;
 }
 
 .button:hover {
@@ -451,7 +450,6 @@ footer {
     max-width: 1044px;
     margin: -30px auto;
     padding: 30px 0;
-    border-radius: 30px;
     background-color: #f6f6f6;
   }
   .menu-title {
@@ -471,11 +469,18 @@ footer {
     white-space: normal;
     overflow: visible;
     text-overflow: unset;
+    font-family: "Roboto", sans-serif;
+  }
+  .button {
+    margin: 0;
+  }
+  footer {
+    margin: 0;
   }
   .footer {
     margin-right: 0;
-    padding-top: 10px;
     padding-bottom: 10px;
+    padding-top: 10px;
   }
   .footer-content {
     flex-direction: row-reverse;

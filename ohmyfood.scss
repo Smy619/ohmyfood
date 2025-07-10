@@ -122,15 +122,17 @@ header {
   font-family: $text-font;
   font-weight: 500;
   color: $text-light;
-  background-color: #f3f3f3;
+  background-color: rgba(234, 234, 234, 1);
   height: 50px;
   border: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-top: 1px solid rgba(0, 0, 0, 0.02);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), inset 0px 4px 2px 0px rgba(0, 0, 0, 0.05);
+  position: relative;
   i {
     width: 18px;
     height: 18px;
     color: $text-color;
+   
   }
 
   @media (min-width: 768px) {
@@ -141,8 +143,8 @@ header {
   }
 
   .adress-input {
-    width: 200px;
-    height: 30px;
+    width: 109px;
+    height: 19px;
     background-color: transparent;
     border: none;
     color: $text-light;
@@ -150,12 +152,14 @@ header {
     font-weight: 500;
     font-size: 16px;
     outline: none;
-    padding-left: 10px;
-
+    text-align: center;
+    text-decoration: none;
+    
     &::placeholder {
       color: $text-light;
       opacity: 0.7;
     }
+
     box-shadow: none;
     border-radius: 0;
   }
@@ -179,7 +183,7 @@ $button-height: 50px;
   margin-bottom: 20px;
 
   h2 {
-    font-family: $title-font;
+    font-family: $text-font;
     font-weight: 700;
     font-size: 24px;
     line-height: 100%;
@@ -243,7 +247,7 @@ $numero-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.15);
   width: 100%;
 
   h2 {
-    font-family: $title-font;
+    font-family: $text-font;
     font-weight: 700;
     font-size: 24px;
     line-height: 100%;
@@ -378,7 +382,7 @@ $grey-bg: #f3f3f3;
   h2 {
     font-size: 24px;
     margin-bottom: 0;
-    font-family: $title-font;
+    font-family: $text-font;
     font-weight: 700;
     color: $text-dark;
     line-height: 100%;
@@ -449,7 +453,7 @@ $grey-bg: #f3f3f3;
         color: #000;
         line-height: 1.2;
         margin-left: 16px;
-        font-family: $title-font;
+        font-family: $text-font;
       }
 
       .heart {
