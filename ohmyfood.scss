@@ -18,6 +18,9 @@ body {
   line-height: $line-height-base;
 }
 
+
+
+//*Animation loader*//
 .loader-wrapper {
   position: fixed;
   top: 0;
@@ -332,7 +335,6 @@ $numero-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.15);
     .main-wrapper {
       max-width: 1080px;
       margin: 0 auto;
-      padding: 0 24px;
     }
 
     .step-container {
