@@ -1,6 +1,6 @@
 # OpenclasseroomProjet
 Ohmyfood 🍽️
-Bienvenue sur le projet Ohmyfood, développé dans le cadre du parcours "Développeur Web" de OpenClassrooms.
+Bienvenue sur le projet Ohmyfood, développé dans le cadre du parcours "intégrateur Web" de OpenClassrooms.
 
 🚀 Objectif du projet
 Développer une plateforme permettant aux utilisateurs de consulter les menus gastronomiques de différents restaurants et de passer commande.
